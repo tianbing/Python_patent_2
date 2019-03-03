@@ -12,7 +12,7 @@ import logging
 import pymysql
 def add_to_database(anjuanid,inventor):
     try:
-        conn = pymysql.connect(－－－－－－－－－)
+        conn = pymysql.connect(--------------)
         cursor = conn.cursor()
         # sql = "select * from test_table"
         # reCount = cursor.execute(sql)  # 返回受影响的行数
@@ -52,7 +52,7 @@ def add_reexamination_decision(anjuanid_t,
                                ):
 
     try:
-        conn = pymysql.connect(－－－－－－－)
+        conn = pymysql.connect(-----------)
         cursor = conn.cursor()
         sql = "INSERT INTO patent_reexamination_decision (juedinghao,patent_name, design_name,internal_sequence," \
               "decision_date,priority_date, application_number,application_date,grant_date, plantiff," \
@@ -106,7 +106,7 @@ def add_file_to_database(filename_t, filedata_t):
 
     try:
         # 将数据存储到数据库
-        conn = pymysql.connect(－－－－－－－－)
+        conn = pymysql.connect(-----------)
         # 创建游标
         cursor = conn.cursor()
 
@@ -137,7 +137,7 @@ logging.basicConfig(level=logging.WARNING,#控制台打印的日志级别
 #add_reexamination_decision('1','2','3','4','2002-01-01','2002-01-01','7','2002-01-01','2002-01-01','10','11','12','13','14','15','16','17','18','19')
 socket.setdefaulttimeout(20)      #设置默认超时时间
 head={'User-Agent': 'Mozilla/5.0'}# 设置User-Agent浏览器信息
-i1=range(129000,129999) #示例性提取复审决定号为170000—170100的100个复审决定
+i1=range(126900,126999) #示例性提取复审决定号为170000—170100的100个复审决定
 for juedinghao in i1:
     try:              #异常处理,url为某个复审决定网址
         url = "http://app.sipo-reexam.gov.cn/reexam_out1110/searchdoc/decidedetail.jsp?jdh="+str(juedinghao)+"&lx=fs"
